@@ -11,6 +11,7 @@ plans = [
 {plan: "九州旅行", price: 15000}
 ]
 
+#プラン番号
 while true
   print "プランの番号を選択 > "
   plan_num = gets.to_i
@@ -21,6 +22,7 @@ end
 select_plan = plans[plan_num - 1]
 puts "#{select_plan[:plan]}ですね。何名で予約されますか？"
 
+#予約人数
 while true
   print "人数を入力 > "
   people_num = gets.to_i
@@ -30,11 +32,11 @@ end
 
 puts "#{people_num}名ですね。"
 
+#合計金額
 total_price = select_plan[:price] * people_num
-
 if people_num >=  5
-  total_price = total_price * 0.9
-  puts "5名以上ですので10%割引となります"
+   total_price *= 0.9
+   puts "5名以上ですので10%割引となります"
 end
 
 puts "合計料金は#{total_price.floor}円になります。"
